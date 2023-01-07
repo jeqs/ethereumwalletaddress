@@ -19,5 +19,5 @@ app.use('/api/wallet', require('./routes/wallet'));
 
 // Server
 app.listen(app.get('port'), () =>   {
-    console.log(`iniciado en el puerto ${app.get('port')}`);
+    console.log(`start in port: ${app.get('port')}`);
 });
