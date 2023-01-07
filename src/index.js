@@ -9,13 +9,13 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
-// Port
+// Setting
 app.set('port', process.env.PORT || 3000);
+app.set('json spaces', 2);
 
 // Route
-app.get('/', (req, res) => {
-   res.send('GET Response JQ');
-});
+app.use(require('./routes'));
+app.use('/api/wallet', require('./routes/wallet'));
 
 // Server
 app.listen(app.get('port'), () =>   {
